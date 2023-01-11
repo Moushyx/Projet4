@@ -1,0 +1,17 @@
+%center{
+    display: flex;
+    justify-content: center;
+    width: 100%;
+}
+
+%center-list{
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    text-align: center;
+}
+
+%h1bold {
+    font-size: 27px;
+    font-weight: bold;
+}
