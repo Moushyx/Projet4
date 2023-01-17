@@ -1,0 +1,44 @@
+@import "layout/header";
+
+@import "_components";
+@import "_mixins";
+@import "_placeholders";
+@import "_variables";
+@import "_animations";
+
+@import url('https://fonts.googleapis.com/css2?family=Roboto&family=Shrikhand&display=swap');
+
+main{
+    font-family: 'Roboto', sans-serif;
+    .introsection{
+        .Paris{
+            @extend %center; 
+            //Par défaut du haut vers le bas//
+            background: -webkit-linear-gradient($gris-degr 1%, $gris-fond 7%); 
+            background: -moz-linear-gradient($gris-degr 1%, $gris-fond 7%);
+            background: -o-linear-gradient($gris-degr 1%, $gris-fond 7%);
+            background: linear-gradient($gris-degr 1%, $gris-fond 7%);
+            padding: 20px 0px;
+            }
+            i{
+                padding-right: 10px;
+            }
+        .intro{
+            padding: 3rem;
+            @extend %center-list;
+            background-color: $gris-clair;
+            h2{
+                @extend %h1bold;
+                padding: 15px 20px 5px 20px;;
+                font-size: 30px;
+            }
+            > p{
+                padding: 5px 0px;
+                font-size: 20px;
+            }
+            .btn{
+                @extend %center-list;
+            }
+        }
+    }
+}
