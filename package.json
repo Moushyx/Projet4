@@ -1,0 +1,19 @@
+{
+  "name": "projet4",
+  "version": "1.0.0",
+  "description": "\"sass\"",
+  "main": "index.js",
+  "scripts": {
+    "sass": "sass --watch ./sass/main.scss:./public/css/style.css"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Moushyx/Projet4.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Moushyx/Projet4/issues"
+  },
+  "homepage": "https://github.com/Moushyx/Projet4#readme"
+}

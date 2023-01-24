@@ -1,13 +1,14 @@
+@import "_variables";
+
+
+
 @mixin btn-rose($color, $color2){
-    background: -webkit-linear-gradient(($color, $color2)); 
-    background: -moz-linear-gradient(($color, $color2)); 
-    background: -o-linear-gradient(($color, $color2)); 
     background: linear-gradient(($color, $color2)); 
 }
 
 
 .btn{
-    @include btn-rose($clr-secondary, $clr-primary);
+    @include btn-rose($clr-primary, $clr-secondary);
     padding: 15px;
     border-radius: 25px;
     box-shadow: 4px 4px 6px $gris-degr;

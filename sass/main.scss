@@ -1,11 +1,10 @@
 @import "layout/header";
-
 @import "_components";
-@import "_mixins";
+// @import "_mixins"; //
 @import "_placeholders";
 @import "_variables";
-@import "_animations";
-
+// @import "_animations"; //
+@import "layout/footer";
 @import url('https://fonts.googleapis.com/css2?family=Roboto&family=Shrikhand&display=swap');
 
 main{
@@ -14,9 +13,6 @@ main{
         .Paris{
             @extend %center; 
             //Par défaut du haut vers le bas//
-            background: -webkit-linear-gradient($gris-degr 1%, $gris-fond 7%); 
-            background: -moz-linear-gradient($gris-degr 1%, $gris-fond 7%);
-            background: -o-linear-gradient($gris-degr 1%, $gris-fond 7%);
             background: linear-gradient($gris-degr 1%, $gris-fond 7%);
             padding: 20px 0px;
             }
@@ -40,5 +36,238 @@ main{
                 @extend %center-list;
             }
         }
+    }
+    .tutosection{
+        .sectiontitle{
+            padding-top: $padding-M*2;
+            padding-left: 52px;
+            @extend %h1bold;
+            
+        }
+        .tuto{ 
+            @extend %center-list;
+            counter-reset: tutolist;
+            padding-bottom: 15%;
+            padding-top: 3%;
+            gap: 25px;
+            white-space: nowrap;
+            
+            &__list{
+                background-color: $gris-clair;
+                font-weight: bold;
+                border-radius: 25px;
+                padding: 25px 75px;
+                box-shadow: 4px 4px 6px $gris-degr;
+                width: 50%;
+                position: relative;
+                &:hover{
+                    background-color: rgba(147,86,220, .2);
+                    box-shadow: 7px 7px 6px darken($gris-degr, 8);
+                    & i{
+                        color: $clr-primary;
+                    }
+                }
+                &::before{ 
+                    counter-increment: tutolist;
+                    content: counter(tutolist);
+                    display: flex;
+                    justify-content: center;
+                    align-items: center;
+                    background-color: $clr-primary;
+                    color: white;
+                    width: 30px;
+                    height: 30px;
+                    border-radius: 50%;
+                    position: absolute;
+                    left: -2%;
+                    top: 1rem; //A voir
+                }
+                i{
+                    position: relative;
+                    right: 17%;
+                    
+                }
+            }
+        }
+    }
+    .cardssection{
+        background-color: $gris-clair;
+        padding-bottom: $padding-M * 2;
+        .sectiontitle{
+            padding-top: $padding-M*2;
+            padding-left: 52px;
+            @extend %h1bold;
+        }
+        .cardslist{
+            
+            .card{
+                background-color: $txt-fond-sombre;
+                border-radius: 25px;
+                position: relative;
+                margin: 5%;
+                
+                img{
+                    border-radius: 20px 20px 0px 0px;
+                    width: 100%;
+                    height: 200px;
+                    object-fit: cover;
+                    }
+                &__new{
+                    display: inline;
+                    position: absolute;
+                    padding: 5px 10px;
+                    background-color: $clr-tertiary;
+                    color: $txt-fond-vert;
+                    right: 1rem;
+                    top: 1rem;
+                    }
+                &__bottom{
+                    padding: $padding-S * 3;
+                    h3{
+                        padding-bottom: $padding-S;
+                    }
+                }
+                &__heart{
+                    position: absolute;
+                    right: 1rem;
+                    bottom: 1.5rem;
+                    font-size: 25px;
+                    overflow: visible;
+                }
+            }
+        }
+    }
+ 
+ .backgroundmenu{
+     width:100%;
+     max-height: 30rem;
+     object-fit: cover;
+     z-index: 1;
+ }
+ .menucontainer{
+    background-color: $gris-fond;
+    padding-bottom: 3%;
+    margin-top: -4rem;
+    z-index:5;
+    position: relative;
+    border-radius: 50px 50px 0px 0px;
+
+    .restaurantID{
+        display: flex;
+        justify-content: space-between;
+        padding: 2rem;
+        font-family: 'Shrikhand';
+        i{
+            font-size: 25px;
+        }
+        h2{
+            font-size: 36px;
+        }
+    }
+    .menusection{
+        
+        .menu{
+            display: flex;
+            flex-direction: column;
+            gap: 15px;
+            h2{
+                padding: 2rem 0 0.7rem 1rem;
+                text-transform: uppercase;
+                font-weight: normal;
+                font-size: 20px;
+                position: relative;
+                &::after{
+                    content:"";
+                    width: 3rem;
+                    height: 0.25rem;
+                    background-color: $clr-tertiary;
+                    position: absolute;
+                    left: 1rem;
+                    bottom: 0%;
+                }
+            }
+            &__card1{
+                animation: menu-appear 1s ease-in-out 400ms both;
+            }
+            &__card2{
+                animation: menu-appear 1s ease-in-out 600ms both;
+            }
+            &__card3{
+                animation: menu-appear 1s ease-in-out 800ms both;
+            }
+            &__card4{
+                animation: menu-appear 1s ease-in-out 1000ms both;
+            }
+            &__card{
+                display: flex;
+                flex-direction: row;
+                background-color: $txt-fond-sombre;
+                border-radius: 15px;
+                margin: 0 1rem;
+                box-shadow: 4px 4px 6px $gris-degr;
+                overflow: hidden;
+                @media screen and (min-width: 1025px) and (max-width: 1400px){
+                    flex-grow: 0;
+                    max-width: 300px;
+                }
+            
+                &__description{
+                    display: flex;
+                    flex-direction: row;
+                }
+                &:hover{
+                    & > .menu__card__valid{
+                        margin: 0; 
+                        .fa-check-circle{
+                            animation: rotateicon 600ms ease-in-out both;
+                        }
+                    }   
+                }
+                &__price{
+                    padding: 1rem 1rem 1rem 0;
+                    margin: 1rem;
+                    display: flex;
+                    align-items: flex-end;
+                    justify-content: flex-end;
+                    margin-left: auto;
+                }
+                &__txt{
+                    padding: 1rem;
+                    white-space: nowrap;
+                    text-overflow: ellipsis;
+                    overflow: hidden;
+                    width: 70%;
+                   h3{
+                       padding-bottom: 0.2rem;
+                       white-space: nowrap;
+                       text-overflow: ellipsis;
+                       overflow: hidden;
+                    }
+                    p{
+                       white-space: nowrap;
+                       text-overflow: ellipsis;
+                       overflow: hidden;
+                    }
+                }
+                &__valid{
+                    background-color: $clr-tertiary;
+                    color: $txt-fond-sombre;
+                    margin-right: -5rem;
+                    width: 5rem;
+                    transition: margin-right 310ms ease-in-out;
+                    display: flex;
+                    justify-content: center;
+                    align-items: center;
+                    .fa-check-circle{
+                        font-size: 1.5rem;
+                        transform: rotate(0deg);
+                        }
+                    }
+                }
+            }
+        }
+    }
+    .menufooter{
+        @extend %center-list;
     }
 }
