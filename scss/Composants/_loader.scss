@@ -1,0 +1,16 @@
+/* LOADER */
+
+.loader{
+    @include flex-position ($axe-p: center, $axe-s: center, $x-y: column) ;
+    position: fixed;
+    height: 100%;
+    width: 100%;
+    z-index: 999;
+    animation: loader-opacity 4s forwards;
+    animation-iteration-count: 1;
+    background-color: rgba(246, 246, 246, 0.75);
+    opacity: 1;
+    margin: auto;
+    padding: 0;
+}
+
